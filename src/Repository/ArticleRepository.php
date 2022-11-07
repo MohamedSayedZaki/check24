@@ -27,7 +27,9 @@ class ArticleRepository implements ArticleRepositoryInterface{
 
     public function getAllArticles($offset)
     {
-        $start = ($offset-1) * 3; 
+        $per_page = 3;
+        $start = ($offset-1) * $per_page; 
+
         $resultSet = $this->queryBuilder->setStatement('SELECT username, article.id, title, image, article.create_date, text FROM article join user ON article.user_id = user.id order by article.create_date desc Limit '. $start.' , 3')
                                       ->buildQuery();
 

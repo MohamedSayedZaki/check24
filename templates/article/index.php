@@ -18,16 +18,19 @@ foreach($params['articles'] as $article){
     </div>
 <?php
 }
+$total_pages = ceil($params['articleCount'][0]['ArticleCount'] / 3);
 ?>
 <div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#">1</a>
-  <a class="active" href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
+    <?php if( $params['page'] -1 >= 1) { ?>
+        <a href='/home/index/<?= $params['page'] - 1 ?>'>&laquo;</a>
+    <?php } ?>
+  
+    <?php for($i=1; $i<=$total_pages; $i++){ ?>
+    <a <?php if($i == $params['page']){ ?> class="active" <?php }else{ ?>href="/home/index/<?= $params['page']+1 ?>" <?php } ?>><?= $i ?></a>
+    <?php } ?>
+    <?php if( $params['page'] + 1 <= $total_pages) { ?>
+        <td><a href="/home/index/<?= $params['page'] + 1 ?>">&raquo;</a></td>
+    <?php } ?>
 </div>
 </div>
 <?php

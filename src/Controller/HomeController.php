@@ -19,7 +19,7 @@ class HomeController{
 
         [$articles,$articleCount] = $this->getRepo()->getAllArticles($request->getId());
 
-        return Response::view('article/index',['articles' => $articles, 'articleCount' => $articleCount]);
+        return Response::view('article/index',['articles' => $articles, 'articleCount' => $articleCount, 'page' => $request->getId()]);
     }
 
     private function getRepo()
