@@ -12,11 +12,10 @@
     },
     "autoload": {
         "psr-4":{
-            "App\\":"app/",
-            "App\\Src\\":"app/src/",
-            "App\\Config\\":"app/config/",
-            "App\\Templates\\":"app/templates/",
-            "App\\Inc\\":"app/inc/"
+            "App\\Src\\":"src/",
+            "App\\Config\\":"config/",
+            "App\\Templates\\":"templates/",
+            "App\\Inc\\":"inc/"
         },
         "files": ["index.php"]
     }

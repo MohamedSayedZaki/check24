@@ -31,7 +31,7 @@ class Route{
 
     public static function redirect($path = '')
     {
-        $ROUTES_PATH = $_ENV['url'];
+        $ROUTES_PATH = $_ENV['APP_URL'];
         header("Location: ".$ROUTES_PATH.$path);
     }
 }
