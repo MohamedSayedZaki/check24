@@ -34,16 +34,4 @@ class UserRepository implements UserRepositoryInterface{
 
         return $result->executeQuery();
     }
-
-    public function saveUser($user)
-    {
-        $username = $user->username;
-        $email = $user->email;
-        $password = $user->password;
-        $result = $this->queryBuilder->setStatement("INSERT INTO user (username, email, password) VALUES (:username, :email, :password)")
-                                     ->setParams([':username' => $username, ':email' => $email, ':password' => $password])
-                                     ->buildQuery();
-
-        return $result->executeQuery();
-    }
 }

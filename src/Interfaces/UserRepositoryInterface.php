@@ -8,6 +8,4 @@ interface UserRepositoryInterface{
     public function getUserByUsername($username);
 
     public function getUserByEmail($email);
-    
-    public function saveUser($user);
 }

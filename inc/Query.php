@@ -34,12 +34,12 @@ class Query{
             }else{
                 $stmt->execute();
             }
-
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
             if(preg_match("/select/i", $this->statement, $matches, PREG_OFFSET_CAPTURE)){
                 return $stmt->fetchAll();
             }
 
-            return 1;
+            return $this->db->lastInsertId();
         
         } catch(PDOException $e) {
         
