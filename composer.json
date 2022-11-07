@@ -1,0 +1,23 @@
+{
+    "name": "check24/blog",
+    "description": "Building check24 blog application",
+    "authors": [
+        {
+            "name": "MohamedSayedZaki",
+            "email": "mohamedsayedzaki90@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4":{
+            "App\\":"app/",
+            "App\\Src\\":"app/src/",
+            "App\\Config\\":"app/config/",
+            "App\\Templates\\":"app/templates/",
+            "App\\Inc\\":"app/inc/"
+        },
+        "files": ["index.php"]
+    }
+}
